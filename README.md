@@ -28,6 +28,15 @@ Rama de quality assurance / staging. Aquí se valida lo que viene de `dev` antes
 - Cuando QA aprueba, se abre PR de `qa` hacia `main`
 - `main` queda con la versión estable publicada
 
+### Release (`release/*`) — adaptado a `dev` / `qa` / `main`
+- Se crea desde `dev` cuando el conjunto de cambios está listo para versionar (ej. `release/1.0.0`)
+- No se agregan features nuevas: solo fixes menores, versión y documentación final
+- Flujo de cierre con las tres ramas:
+  1. PR `release/*` → `qa` (validar el candidato a release en QA)
+  2. PR `release/*` → `main` (publicar en producción + tag de versión, ej. `v1.0.0`)
+  3. PR `release/*` → `dev` (devolver a desarrollo los ajustes hechos en la release)
+- `qa` sigue siendo la rama permanente de ambiente; `release/*` es temporal y se elimina al terminar
+
 ### Hotfix (`hotfix/*`)
 - Se crea desde `main` ante un incidente en producción
 - Se integra a `main` mediante PR
