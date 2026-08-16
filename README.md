@@ -9,3 +9,10 @@ Rama de producción: solo código estable / releases.
 
 ### `develop`
 Rama de integración continua. Aquí aterrizan las features antes de un release.
+
+## Flujos
+
+### Feature (`feature/*`)
+- Se crea desde `develop`
+- Se integra a `develop` mediante PR
+- Ejemplo: documentación del flujo de feature en este README
