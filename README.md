@@ -32,3 +32,7 @@ Rama de quality assurance / staging. Aquí se valida lo que viene de `dev` antes
 - Se crea desde `main` ante un incidente en producción
 - Se integra a `main` mediante PR
 - Luego se propaga el fix a `qa` y `dev` con PRs para no perder el cambio
+- Ejemplo: rama `hotfix/documentar-hotfix` documenta este flujo en el README
+  1. PR hotfix → `main`
+  2. PR `main` → `qa` (o hotfix → `qa`)
+  3. PR `main` → `dev` (o hotfix → `dev`)
